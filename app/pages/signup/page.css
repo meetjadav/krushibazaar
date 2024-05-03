@@ -1,14 +1,11 @@
 .main-signup-container {
-    margin-top: 10vh;
     padding: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-body {
-    background: var(--primary_colour);
+    height: 96.7vh;
+    background-color: var(--primary_colour);
 }
 
 .signup-container {

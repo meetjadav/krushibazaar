@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import Image from 'next/image';
+import "@/components/Footer.css"
 const Footer = () => {
     return (
         <footer>
