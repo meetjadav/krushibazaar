@@ -1,30 +1,33 @@
 .weather-container {
-    background-color: var(--primary_colour);
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    width: 10vw;
-    height: 10vh;
-    margin: 5vh 5vw 5vh 80vw;
+    width: 100vw;
+    height: 100vh;
+    /* Center horizontally and vertically */
 }
 
 .weather-forecast {
-    text-align: left;
+    text-align: center;
 }
-
 
 .weather-info {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: center;
 }
 
+.weather-location,
 .weather-temperature,
 .weather-wind {
-    font-size: 15px;
-    margin: 5px 0px;
+    width: 60vw;
+    height: 20vh;
+    background-color: black;
+    font-size: 30px;
+    border-radius: 10px;
     color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
