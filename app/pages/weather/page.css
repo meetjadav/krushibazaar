@@ -1,0 +1,45 @@
+.main-weather-container {
+    width: 100vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-container {
+    flex-direction: column;
+    margin-top: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    gap: 20px;
+}
+
+
+.search-input {
+    width: 80vw;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+.search-button {
+    background-color: var(--primary_colour);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-button:hover {
+    background-color: var(--primary_colour_2);
+}

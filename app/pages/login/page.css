@@ -48,7 +48,7 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-    background-color: rgb(152 129 10 / 93%);
+    background-color: var(--primary_colour_2);
 }
 
 .social-login {

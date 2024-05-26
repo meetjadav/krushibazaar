@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import "../login/page.css";
 
-const Login = () => {
+const Page = () => {
     const [gmail, setGmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
@@ -50,4 +50,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default Page;

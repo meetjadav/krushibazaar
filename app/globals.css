@@ -17,6 +17,7 @@ body {
   --primary_colour: rgba(195, 166, 16, 0.93);
   --blur_val1: 0px 0px 7px black;
   --blur_val2: 0px 2px 4px 0px black;
+  --primary_colour_2: rgb(152 129 10 / 93%);
 }
 
 

@@ -3,7 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Image from 'next/image';
 import Separator from "@/components/Separator";
-import "../page.css";
+import "./page.css";
 
 const HomePage = () => {
   return (

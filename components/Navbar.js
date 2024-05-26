@@ -15,6 +15,9 @@ const Navbar = () => {
                 <Link href="http://localhost:3000/pages/marketdynamics" className='text1'>
                     Market Dynamics
                 </Link>
+                <Link href="http://localhost:3000/pages/weather" className='text1'>
+                    Weather Information
+                </Link>
                 <Link href="/pages/signup" className='text1' >
                     Sign Up
                 </Link>

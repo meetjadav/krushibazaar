@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import "../signup/page.css";
 
-const SignUpPage = () => {
+const Page = () => {
     const [formData, setFormData] = useState({
         username: '',
         email: '',
@@ -57,4 +57,4 @@ const SignUpPage = () => {
     );
 };
 
-export default SignUpPage;
+export default Page;
