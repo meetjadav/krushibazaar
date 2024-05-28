@@ -1,13 +1,6 @@
 import { NextResponse } from 'next/server';
-import mysql from 'mysql';
+import db from '@/utils/db';
 
-// MySQL Connection
-const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'root', // Replace with your MySQL username
-    password: 'root123', // Replace with your MySQL password
-    database: 'krushibazaar'
-});
 
 export async function POST(request) {
     console.log('Received POST request for login');

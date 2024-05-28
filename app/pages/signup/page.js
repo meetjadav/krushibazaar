@@ -1,6 +1,8 @@
 "use client"
 import React, { useState } from 'react';
 import "../signup/page.css";
+import { getBaseUrl } from '@/utils/getBaseUrl';
+
 
 const Page = () => {
     const [formData, setFormData] = useState({
@@ -28,7 +30,7 @@ const Page = () => {
 
             if (await response.json()) {
                 // Redirect to login page upon successful registration
-                window.location.href = 'http://localhost:3000/pages/login';
+                window.location.href = `${getBaseUrl()}/pages/login`;
             } else {
                 console.error('Registration failed:', response.statusText);
             }
@@ -50,7 +52,7 @@ const Page = () => {
                 </form>
                 <div className="login-link">
                     <span>Already have an account? </span>
-                    <a href="http://localhost:3000/pages/login">Login</a>
+                    <a href={`${getBaseUrl()}/pages/login`}>Login</a>
                 </div>
             </div>
         </div>

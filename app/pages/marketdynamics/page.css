@@ -1,0 +1,18 @@
+.main-marketdynamics-container {
+    width: 100vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cards {
+    margin-top: 5vh;
+    margin-left: 3vw;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2vw;
+    flex-wrap: wrap;
+}

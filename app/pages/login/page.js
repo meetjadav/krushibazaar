@@ -1,6 +1,7 @@
 "use client"
 import React, { useState } from 'react';
 import "../login/page.css";
+import { getBaseUrl } from '@/utils/getBaseUrl';
 
 const Page = () => {
     const [gmail, setGmail] = useState('');
@@ -21,7 +22,7 @@ const Page = () => {
             console.log(data);
             if (data.message == "Login successful") {
                 // Redirect or perform action upon successful login
-                window.location.href = "http://localhost:3000"
+                window.location.href = `${getBaseUrl()}`;
             } else {
                 // Handle failed login
                 console.log("Login failed");
@@ -43,7 +44,7 @@ const Page = () => {
                     <input type="submit" value="Login" />
                 </form>
                 <div className="signup">
-                    <span>Don&apos;t have an account? </span><a href="http://localhost:3000/pages/signup">Sign up</a>
+                    <span>Don&apos;t have an account? </span><a href={`${getBaseUrl()}/pages/signup`}>Sign up</a>
                 </div>
             </div>
         </div>

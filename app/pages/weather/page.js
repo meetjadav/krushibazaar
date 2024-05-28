@@ -40,7 +40,6 @@ const Page = () => {
                 <button className="search-button" onClick={handleSearch}>Search</button>
             </div>
             <WeatherComponent latitude={latitude} longitude={longitude} />
-            <SeparatorComponent />
             <FooterComponent />
         </div>
     );

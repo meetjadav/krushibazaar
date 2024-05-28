@@ -1,14 +1,6 @@
 // pages/api/register.js
 import { NextResponse } from 'next/server';
-import mysql from 'mysql';
-
-// MySQL Connection
-const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'root', // Replace with your MySQL username
-    password: 'root123', // Replace with your MySQL password
-    database: 'krushibazaar'
-});
+import db from '@/utils/db';
 export async function POST(request) {
     console.log('Received POST request')
     let data = await request.json();
