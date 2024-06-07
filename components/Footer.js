@@ -4,6 +4,7 @@ import "@/components/Footer.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import Image from 'next/image';
+import { getBaseUrl } from '@/utils/getBaseUrl';
 const Footer = () => {
     return (
         <footer>
@@ -11,7 +12,7 @@ const Footer = () => {
                 <Image src="/img3.png" alt="" width={250} height={100} />
             </div>
             <div>
-                <Link href="/" className='text1'>
+                <Link href={`${getBaseUrl()}/pages/faq`} className='text1'>
                     FAQs
                 </Link>
                 <Link href="/" className='text1'>

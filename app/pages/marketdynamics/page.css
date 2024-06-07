@@ -7,9 +7,81 @@
     align-items: center;
 }
 
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 40%;
+    z-index: 20;
+    width: 50px;
+    height: 50px;
+    background-color: #000000;
+    border: 2px solid black;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    transition: width 0.3s, height 0.3s;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar.expanded {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 200px;
+    height: auto;
+}
+
+.sidebar button {
+    color: white;
+    background-color: black;
+    display: none;
+    padding: 5px;
+    border: 2px solid black;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-weight: bolder;
+    font-size: medium;
+}
+
+.sidebar.expanded button {
+    display: flex;
+}
+
+.sidebar button:hover {
+    border-radius: 10px;
+    border: 2px solid var(--primary_colour);
+    background-color: var(--primary_colour);
+}
+
+.toggle-button {
+    cursor: pointer;
+    font-size: 18px;
+    color: white;
+    text-align: center;
+    transition: transform 0.3s;
+    /* Smooth transition for rotation */
+}
+
+.sidebar.expanded .toggle-button {
+    transform: rotate(180deg);
+    /* Rotate arrow when expanded */
+}
+
 .cards {
     margin-top: 5vh;
-    margin-left: 3vw;
+    margin-left: 5vw;
+    /* Adjust margin to avoid overlap with sidebar */
     display: flex;
     justify-content: flex-start;
     align-items: center;
