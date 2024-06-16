@@ -12,10 +12,10 @@ const Footer = () => {
                 <Image src="/img3.png" alt="" width={250} height={100} />
             </div>
             <div>
-                <Link href={`${getBaseUrl()}/pages/faq`} className='text1'>
+                <Link href={`${getBaseUrl()}/pages/homepage/faq`} className='text1'>
                     FAQs
                 </Link>
-                <Link href="/" className='text1'>
+                <Link href={`${getBaseUrl()}/pages/homepage/terms`} className='text1'>
                     Terms & Conditions
                 </Link >
             </div >

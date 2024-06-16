@@ -6,8 +6,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 96.7vh;
+    height: 96.3vh;
+    width: 100%;
     background-color: var(--primary_colour);
+    overflow: hidden;
 }
 
 .signup-container {
@@ -17,6 +19,7 @@
     box-shadow: 0px 0px 10px 5px rgb(18 10 10 / 19%);
     text-align: center;
     width: 300px;
+    height: auto;
 }
 
 input[type="text"],

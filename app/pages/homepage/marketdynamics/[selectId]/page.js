@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import FooterComponent from "@/components/Footer";
 import NavbarComponent from "@/components/Navbar";
 import marketData from "@/data/marketData"; // Adjust the path based on your project structure
-import "@/app/pages/marketdynamics/[selectId]/page.css"
+import "@/app/pages/homepage/marketdynamics/[selectId]/page.css"
 import Image from 'next/image';
 import { getBaseUrl } from '@/utils/getBaseUrl';
 

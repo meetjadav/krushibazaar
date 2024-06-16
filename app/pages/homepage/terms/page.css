@@ -1,0 +1,28 @@
+.main-terms-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    height: auto;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.small-title {
+    margin: 20px 0px;
+    color: white;
+    background-color: black;
+    border: 2px solid black;
+    border-radius: 12px;
+    width: auto;
+    text-align: center;
+    font-size: larger;
+    padding: 15px;
+
+}

@@ -22,7 +22,7 @@ const Page = () => {
             console.log(data);
             if (data.message == "Login successful") {
                 // Redirect or perform action upon successful login
-                window.location.href = `${getBaseUrl()}`;
+                window.location.href = `${getBaseUrl()}/pages/homepage`;
             } else {
                 // Handle failed login
                 console.log("Login failed");

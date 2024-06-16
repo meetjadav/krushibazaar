@@ -1,8 +1,7 @@
-"use client"
+"use client";
 import React, { useState } from 'react';
 import "../signup/page.css";
 import { getBaseUrl } from '@/utils/getBaseUrl';
-
 
 const Page = () => {
     const [formData, setFormData] = useState({
@@ -16,10 +15,9 @@ const Page = () => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    const handleSubmit = async () => {
-        //console.log(e);
+    const handleSubmit = async (e) => {
+        e.preventDefault(); // Prevent default form submission behavior
         try {
-
             const response = await fetch('/api/signupbackend', {
                 method: 'POST',
                 headers: {
@@ -43,7 +41,7 @@ const Page = () => {
         <div className="main-signup-container">
             <div className="signup-container">
                 <h2>KrushiBazaar Registration</h2>
-                <form action={handleSubmit}> {/* Change action to onSubmit */}
+                <form onSubmit={handleSubmit}>
                     <input type="text" name="username" placeholder="Full Name" onChange={handleChange} />
                     <input type="email" name="email" placeholder="Email" onChange={handleChange} />
                     <input type="password" name="password" placeholder="Password" onChange={handleChange} />

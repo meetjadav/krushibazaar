@@ -13,7 +13,7 @@ const Page = () => {
             <div className="faq-item">
                 <span className="faq-question">What is Krushi Bazaar?</span>
                 <span className="faq-answer">
-                    Krushi Bazaar is a platform that connects farmers and stakeholders in agriculture, offering market prices, crop data, and transaction history. It facilitates buying/selling, enhances data analytics, and provides farming recommendations using web and mobile app development, databases, and data analytics.
+                    Krushi Bazaar is a platform that connects farmers and stakeholders in agriculture, It facilitates buying/selling, provides farming recommendations using web development, databases.
                 </span>
             </div>
             <Separator />

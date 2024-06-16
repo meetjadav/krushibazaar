@@ -1,8 +1,8 @@
 "use client";
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import FooterComponent from "@/components/Footer";
 import NavbarComponent from "@/components/Navbar";
-import "@/app/pages/marketdynamics/page.css";
+import "@/app/pages/homepage/marketdynamics/page.css";
 import Card from "@/components/Card";
 import marketData from "@/data/marketData"; // Adjust the path based on your project structure
 import { getBaseUrl } from "@/utils/getBaseUrl";
