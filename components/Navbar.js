@@ -19,8 +19,8 @@ const Navbar = () => {
                 <Link href={`${getBaseUrl()}/pages/homepage/weather`} className='text1'>
                     Weather Information
                 </Link>
-                <Link href={`${getBaseUrl()}/pages/signup`} className='text1' >
-                    Sign Up
+                <Link href={`${getBaseUrl()}/pages/homepage/userprofile`} className='text1' >
+                    User Profile
                 </Link>
                 <Link href={`${getBaseUrl()}/pages/login`} className='text1'>
                     Login
