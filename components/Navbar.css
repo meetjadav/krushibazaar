@@ -31,6 +31,7 @@ nav {
 }
 
 .text1 {
+    font-family: 'Roboto', sans-serif;
     display: flex;
     font-weight: bolder;
     padding: 5px;

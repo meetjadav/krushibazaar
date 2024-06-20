@@ -2,7 +2,9 @@
 import { useEffect, useState } from 'react';
 import NavbarComponent from '@/components/Navbar';
 import FooterComponent from '@/components/Footer';
+import { getBaseUrl } from '@/utils/getBaseUrl';
 import "@/app/pages/homepage/userprofile/page.css"
+
 const UserProfile = () => {
     const [user, setUser] = useState(null);
     const [error, setError] = useState('');
@@ -28,22 +30,51 @@ const UserProfile = () => {
         fetchUserProfile();
     }, []);
 
-    if (error) {
-        return <div className="main-userprofile-container">
-            <NavbarComponent />
-            <div className="title">
-                Error: {error}
-            </div>
+    const logout = async () => {
+        try {
+            const response = await fetch('/api/logoutbackend', {
+                method: 'POST',
+            });
+            const data = await response.json();
+            console.log(data);
+            if (data.message == "Logout successful") {
+                console.log('Logout successful');
+                // Redirect to the login page or home page
+                window.location.href = `${getBaseUrl()}/pages/login`;
+            } else {
+                console.error('Logout failed');
+            }
+        } catch (err) {
+            console.error('An error occurred during logout:', err);
+        }
+    };
 
-            <FooterComponent /></div>;
+    if (error) {
+        return (
+            <div className="main-userprofile-container">
+                <NavbarComponent />
+                <div className="title">
+                    Error: {error}
+                </div>
+                <div className="space">
+
+                </div>
+                <FooterComponent />
+            </div>
+        );
     }
 
     if (!user) {
-        return <div className="main-userprofile-container t">
-            <NavbarComponent /><h1 className="title">Loading...</h1>
-            <p className="small-title">Loading</p>
-            <p className="small-title">Loading</p>
-            <FooterComponent /></div>;
+        return (
+            <div className="main-userprofile-container">
+                <NavbarComponent />
+                <h1 className="title">Loading...</h1>
+                <p className="small-title">Loading..</p>
+                <p className="small-title">Loading...</p>
+                <button className="logout-button">Loading...</button>
+                <FooterComponent />
+            </div>
+        );
     }
 
     return (
@@ -52,6 +83,7 @@ const UserProfile = () => {
             <h1 className="title">User Profile</h1>
             <p className="small-title">Email: {user.email}</p>
             <p className="small-title">Name: {user.username}</p>
+            <button className="logout-button" onClick={logout}>Logout</button>
             <FooterComponent />
         </div>
     );

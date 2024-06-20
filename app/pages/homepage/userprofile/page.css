@@ -20,3 +20,22 @@
     padding: 15px;
 
 }
+
+.logout-button {
+    margin-top: 5px;
+    background-color: var(--primary_colour);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.logout-button:hover {
+    background-color: var(--primary_colour_2);
+}
+
+.space {
+    margin-top: 20vh;
+}
