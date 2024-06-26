@@ -1,4 +1,5 @@
 .separator {
+    margin: 5vh 0vw;
     display: flex;
     justify-content: center;
     align-items: center;

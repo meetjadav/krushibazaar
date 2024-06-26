@@ -1,4 +1,3 @@
-// components/Footer.js
 import Link from 'next/link';
 import "@/components/Footer.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -11,11 +10,11 @@ const Footer = () => {
             <div className="img">
                 <Image src="/img3.png" alt="" width={250} height={100} />
             </div>
-            <div>
-                <Link href={`${getBaseUrl()}/pages/homepage/faq`} className='text1'>
+            <div className='bar2'>
+                <Link href={`${getBaseUrl()}/pages/homepage/faq`} className='text2'>
                     FAQs
                 </Link>
-                <Link href={`${getBaseUrl()}/pages/homepage/terms`} className='text1'>
+                <Link href={`${getBaseUrl()}/pages/homepage/terms`} className='text2'>
                     Terms & Conditions
                 </Link >
             </div >
