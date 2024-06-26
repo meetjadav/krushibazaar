@@ -5,7 +5,7 @@ import FooterComponent from '@/components/Footer';
 import { getBaseUrl } from '@/utils/getBaseUrl';
 import "@/app/pages/homepage/userprofile/page.css"
 
-const UserProfile = () => {
+const Page = () => {
     const [user, setUser] = useState(null);
     const [error, setError] = useState('');
 
@@ -81,12 +81,24 @@ const UserProfile = () => {
         <div className="main-userprofile-container">
             <NavbarComponent />
             <h1 className="title">User Profile</h1>
-            <p className="small-title">Email: {user.email}</p>
-            <p className="small-title">Name: {user.username}</p>
+            <div className="sub-container">
+
+                <div className='discription'>
+                    <span className='small-title1'>Email </span>
+                    <span className='small-title1'>Name </span>
+
+                </div>
+                <div className='discription'>
+                    <span className="small-title2">{user.email}</span>
+                    <span className="small-title2">{user.username}</span>
+                </div>
+            </div>
+
+
             <button className="logout-button" onClick={logout}>Logout</button>
             <FooterComponent />
         </div>
     );
 };
 
-export default UserProfile;
+export default Page;

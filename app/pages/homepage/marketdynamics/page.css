@@ -81,7 +81,6 @@
 .cards {
     margin-top: 5vh;
     margin-left: 5vw;
-    /* Adjust margin to avoid overlap with sidebar */
     display: flex;
     justify-content: flex-start;
     align-items: center;

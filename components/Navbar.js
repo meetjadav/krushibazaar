@@ -22,6 +22,9 @@ const Navbar = () => {
                 <Link href={`${getBaseUrl()}/pages/homepage/userprofile`} className='text1' >
                     User Profile
                 </Link>
+                <Link href={`${getBaseUrl()}/pages/homepage/itemsbought`} className='text1' >
+                    Show Items Bought
+                </Link>
                 <Link href={`${getBaseUrl()}/pages/login`} className='text1'>
                     Login
                 </Link >

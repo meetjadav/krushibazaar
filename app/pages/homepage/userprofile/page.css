@@ -1,4 +1,6 @@
 .main-userprofile-container {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -7,29 +9,60 @@
     height: 100%;
 }
 
+.sub-container {
+    display: flex;
+    width: 10vw;
+    justify-content: center;
+    align-items: center;
+    gap: 2vw;
+}
 
-.small-title {
-    margin: 20px 0px;
+.small-title2 {
     color: white;
     background-color: black;
     border: 2px solid black;
-    border-radius: 12px;
+    border-radius: 5px;
     width: auto;
     text-align: center;
-    font-size: larger;
+    font-size: x-large;
     padding: 15px;
+}
 
+.small-title1 {
+    background-color: var(--primary_colour);
+    border: none;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    font-size: x-large;
+    border-radius: 5px;
+    font-weight: bold;
+    width: 10vw;
+}
+
+.discription {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 50vw;
+    height: 20vh;
+    gap: 1vw;
 }
 
 .logout-button {
-    margin-top: 5px;
+    margin-top: 10vh;
     background-color: var(--primary_colour);
-    color: white;
     border: none;
+    color: white;
     padding: 12px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
+    font-weight: bold;
 }
 
 .logout-button:hover {
