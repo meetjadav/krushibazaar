@@ -29,7 +29,11 @@ const Page = () => {
     }, []);
 
     if (loading) {
-        return <div>Loading...</div>;
+        return <div className='main-itemsbought-container'>
+            <NavbarComponent />
+            <h1 className='title'>Purchased Items</h1>
+            <p className="no-purchase">Loading...</p>
+            <FooterComponent /></div>;
     }
 
     if (error) {
@@ -40,16 +44,19 @@ const Page = () => {
         <div className='main-itemsbought-container'>
             <NavbarComponent />
             <h1 className='title'>Purchased Items</h1>
-            <ul className="items">
-
-                {items.map((item) => (
-                    <li key={item.item_name}>
-                        <p>Item Name :   {item.item_name}</p>
-                        <p>Total Quantity :  {item.total_quantity}</p>
-                        <p>Total Price :   ${item.total_quantity * item.price}</p>
-                    </li>
-                ))}
-            </ul>
+            {items.length === 0 ? (
+                <p className="no-purchase">You haven&apos;t purchased yet</p>
+            ) : (
+                <ul className="items">
+                    {items.map((item) => (
+                        <li key={item.item_name}>
+                            <p>Item Name: {item.item_name}</p>
+                            <p>Total Quantity: {item.total_quantity}</p>
+                            <p>Total Price: ${item.total_quantity * item.price}</p>
+                        </li>
+                    ))}
+                </ul>
+            )}
 
             <FooterComponent />
         </div>

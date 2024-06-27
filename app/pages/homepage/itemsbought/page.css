@@ -37,3 +37,21 @@ body {
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
 }
+
+.no-purchase {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    list-style-type: none;
+    border: 2px black;
+    border-radius: 12px;
+    background-color: black;
+    color: white;
+    width: 40vw;
+    height: 20vh;
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: x-large;
+}
