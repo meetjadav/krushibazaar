@@ -13,7 +13,7 @@ const Page = () => {
                 <div className="para1">
                     <span className="title">What is Krushi Bazaar?</span>
                     <div className="boxes1">
-                        <span className="title1_para1">Krushi Bazaar is a platform that enhance the productivity of farmers. It facilitates provides farming recommendations using web development, databases. It provides necessary equipment to farmer with reliable price.</span>
+                        <span className="title1_para1">Krushi Bazaar is a platform that enhance the productivity of farmers. It provides necessary equipments to farmer with reliable price. It also provides farming recommendations to boost farming. </span>
                         <Image className="title1_img1" src="/img4.jpg" alt="" width={500} height={500} />
                     </div>
                 </div>
@@ -22,17 +22,17 @@ const Page = () => {
                         Insights
                     </span>
                     <div className="boxes2">
-                        <Image className="title1_img1" src="/img5.jpg" alt="" width={500} height={500} />
                         <span className="title_rem_para">
-                            Smart Farming Recommendations Through Our Website
+                            Purchase Any Farming Equipment With our Website
                         </span>
+                        <Image className="title1_img1" src="/img6.jpg" alt="" width={500} height={500} />
                     </div>
                     <Separator />
                     <div className="boxes2">
+                        <Image className="title1_img1" src="/img5.jpg" alt="" width={500} height={500} />
                         <span className="title_rem_para">
-                            Purchase Any Farming Equipment With Our Website
+                            Smart Farming Recommendations Through our Website
                         </span>
-                        <Image className="title1_img1" src="/img6.jpg" alt="" width={500} height={500} />
                     </div>
                     <Separator />
                     <div className="boxes2">
