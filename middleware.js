@@ -13,5 +13,5 @@ export function middleware(req) {
 }
 
 export const config = {
-    matcher: ['/pages/homepage'], // Path to protect
+    matcher: ['/pages/homepage/:path*']
 };

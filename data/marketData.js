@@ -10,7 +10,7 @@ const marketData = {
         farmerRecommendation: 'Farmers recommend planting wheat in well-drained soil with moderate rainfall. Crop rotation and the use of resistant varieties are crucial to prevent diseases. Proper fertilization and timely irrigation can significantly enhance yield and quality.',
         image: images['./wheat.jpg'],
         price: 0.2,
-        unit: 'kg' // Added unit
+        unit: 'kg'
     },
     rice: {
         name: 'Rice',
@@ -19,7 +19,7 @@ const marketData = {
         farmerRecommendation: 'For optimal growth, farmers should cultivate rice in fields with adequate water supply, typically through flooding. Using high-quality seeds and following proper planting techniques can improve yield. Integrated pest management and balanced fertilization are also essential for a healthy crop.',
         image: images['./rice.jpg'],
         price: 0.3,
-        unit: 'kg' // Added unit
+        unit: 'kg'
     },
     pearlmillet: {
         name: 'Pearl Millet',
@@ -28,7 +28,7 @@ const marketData = {
         farmerRecommendation: 'Pearl millet thrives in arid and semi-arid regions. Farmers should plant it in sandy or loamy soils with good drainage. It is important to use improved seed varieties and follow appropriate sowing methods. Regular weeding and pest control measures are necessary for optimal yields.',
         image: images['./pearlmillet.jpg'],
         price: 0.5,
-        unit: 'kg' // Added unit
+        unit: 'kg'
     },
     oats: {
         name: 'Oats',
@@ -37,7 +37,7 @@ const marketData = {
         farmerRecommendation: 'Oats grow best in cool, moist climates. Farmers should plant them in well-drained, fertile soils. Using certified seeds and following proper crop rotation practices can help prevent diseases. Adequate fertilization and timely harvesting are key to achieving high-quality oats.',
         image: images['./oats.jpg'],
         price: 0.5,
-        unit: 'kg' // Added unit
+        unit: 'kg'
     },
     chickpeas: {
         name: 'Chickpeas',
@@ -46,7 +46,7 @@ const marketData = {
         farmerRecommendation: 'Chickpeas prefer well-drained loamy or sandy soils. Farmers should inoculate seeds with rhizobium bacteria to enhance nitrogen fixation. Regular irrigation during flowering and pod formation stages is crucial. Crop rotation and pest management practices help in maintaining soil health and reducing disease incidence.',
         image: images['./chickpeas.jpg'],
         price: 0.8,
-        unit: 'kg' // Added unit
+        unit: 'kg'
     },
     mungbeans: {
         name: 'Mung Beans',
@@ -55,7 +55,7 @@ const marketData = {
         farmerRecommendation: 'Mung beans grow well in warm climates with moderate rainfall. Farmers should plant them in well-drained soils with good fertility. Proper spacing and timely weeding are important to prevent competition from weeds. Pest and disease management is also crucial for ensuring a healthy crop.',
         image: images['./mungbeans.jpg'],
         price: 0.4,
-        unit: 'kg' // Added unit
+        unit: 'kg'
     },
     greenpeas: {
         name: 'Green Peas',
@@ -64,7 +64,7 @@ const marketData = {
         farmerRecommendation: 'Green peas thrive in cool, well-drained soils with good organic matter. Farmers should plant them early in the season to avoid hot weather. Regular irrigation and proper spacing help in achieving good yields. Using disease-resistant varieties and implementing crop rotation can reduce the risk of pests and diseases.',
         image: images['./greenpeas.jpg'],
         price: 0.6,
-        unit: 'kg' // Added unit
+        unit: 'kg'
     },
     tractors: {
         name: 'Tractors',
@@ -73,7 +73,7 @@ const marketData = {
         farmerRecommendation: 'Farmers should choose tractors based on their farm size and specific needs. Regular maintenance, including oil changes, filter replacements, and tire checks, is crucial for ensuring long-term performance. Investing in attachments like plows, harrows, and seeders can enhance the tractor\'s versatility.',
         image: images['./tractors.jpg'],
         price: 25000,
-        unit: 'unit' // Added unit
+        unit: 'unit'
     },
     combineharvesters: {
         name: 'Combine Harvesters',
@@ -82,7 +82,7 @@ const marketData = {
         farmerRecommendation: 'Selecting the right combine harvester depends on the crop type and field size. Regular maintenance, including checking belts, chains, and blades, ensures optimal performance. Proper calibration and adjustment based on the crop conditions are necessary for effective harvesting.',
         image: images['./combineharvesters.jpg'],
         price: 100000,
-        unit: 'unit' // Added unit
+        unit: 'unit'
     },
     fertilizers: {
         name: 'Fertilizers',
@@ -91,7 +91,7 @@ const marketData = {
         farmerRecommendation: 'Farmers should conduct soil tests to determine nutrient deficiencies before applying fertilizers. Following recommended application rates and timings can prevent over-fertilization, which can harm the environment. Using organic fertilizers and practicing integrated nutrient management can improve soil health.',
         image: images['./fertilizers.jpg'],
         price: 25,
-        unit: 'kg' // Added unit
+        unit: 'kg'
     },
     pesticides: {
         name: 'Pesticides',
@@ -100,7 +100,7 @@ const marketData = {
         farmerRecommendation: 'Farmers should identify the specific pests affecting their crops before selecting pesticides. Following the recommended dosage and application methods is crucial for effectiveness and safety. Integrated pest management practices, including crop rotation and biological controls, can reduce reliance on chemical pesticides.',
         image: images['./pesticides.jpg'],
         price: 30,
-        unit: 'liter' // Added unit
+        unit: 'liter'
     }
 };
 
