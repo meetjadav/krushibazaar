@@ -23,23 +23,24 @@ const Page = () => {
                     </span>
                     <div className="boxes2">
                         <span className="title_rem_para">
-                            Purchase Any Farming Equipment With our Website
+                            Purchase any farming equipments or tools With our Website
                         </span>
-                        <Image className="title1_img1" src="/img6.jpg" alt="" width={500} height={500} />
-                    </div>
-                    <Separator />
-                    <div className="boxes2">
                         <Image className="title1_img1" src="/img5.jpg" alt="" width={500} height={500} />
+                    </div>
+                    <Separator />
+                    <div className="boxes2">
+                        <Image className="title1_img1" src="/img6.jpg" alt="" width={500} height={500} />
                         <span className="title_rem_para">
-                            Smart Farming Recommendations Through our Website
+                            Smart farming recommendations through our Website
                         </span>
                     </div>
                     <Separator />
                     <div className="boxes2">
-                        <Image className="title1_img1" src="/img7.jpg" alt="" width={500} height={500} />
                         <span className="title_rem_para">
-                            Reliable Market Price
+                            Reliable market price
                         </span>
+                        <Image className="title1_img1" src="/img7.jpg" alt="" width={500} height={500} />
+
                     </div>
                 </div>
             </main>

@@ -4,7 +4,7 @@ import NavbarComponent from '@/components/Navbar';
 import FooterComponent from '@/components/Footer';
 import { getBaseUrl } from '@/utils/getBaseUrl';
 import "@/app/pages/homepage/userprofile/page.css"
-
+import LoadigComponent from "@/components/Loading";
 const Page = () => {
     const [user, setUser] = useState(null);
     const [error, setError] = useState('');
@@ -52,13 +52,7 @@ const Page = () => {
     if (error) {
         return (
             <div className="main-userprofile-container">
-                <NavbarComponent />
-                <div className="title">
-                    Error: {error}
-                </div>
-                <div className="space">
-
-                </div>
+                <NavbarComponent />Failed to fetch data...
                 <FooterComponent />
             </div>
         );
@@ -67,11 +61,7 @@ const Page = () => {
     if (!user) {
         return (
             <div className="main-userprofile-container">
-                <NavbarComponent />
-                <h1 className="title">Loading...</h1>
-                <p className="small-title">Loading..</p>
-                <p className="small-title">Loading...</p>
-                <button className="logout-button">Loading...</button>
+                <NavbarComponent /><LoadigComponent />
                 <FooterComponent />
             </div>
         );

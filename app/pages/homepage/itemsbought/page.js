@@ -3,7 +3,8 @@
 import { useEffect, useState } from 'react';
 import NavbarComponent from '@/components/Navbar';
 import FooterComponent from '@/components/Footer';
-import "@/app/pages/homepage/itemsbought/page.css"
+import "@/app/pages/homepage/itemsbought/page.css";
+import LoadigComponent from "@/components/Loading";
 const Page = () => {
     const [items, setItems] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -30,9 +31,7 @@ const Page = () => {
 
     if (loading) {
         return <div className='main-itemsbought-container'>
-            <NavbarComponent />
-            <h1 className='title'>Purchased Items</h1>
-            <p className="no-purchase">Loading...</p>
+            <NavbarComponent /><LoadigComponent />
             <FooterComponent /></div>;
     }
 

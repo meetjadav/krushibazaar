@@ -4,8 +4,9 @@ import { useEffect, useState } from 'react';
 import FooterComponent from "@/components/Footer";
 import NavbarComponent from "@/components/Navbar";
 import marketData from "@/data/marketData"; // Adjust the path based on your project structure
-import "@/app/pages/homepage/marketdynamics/[selectId]/page.css"
+import "@/app/pages/homepage/marketdynamics/[selectId]/page.css";
 import Image from 'next/image';
+import LoadigComponent from "@/components/Loading";
 
 const Page = ({ params }) => {
     const [data, setData] = useState(null);
@@ -30,7 +31,9 @@ const Page = ({ params }) => {
     }
 
     if (!data) {
-        return <div>Loading...</div>;
+        return <div>
+            <NavbarComponent /><LoadigComponent />
+            <FooterComponent /></div>;
     }
 
     const handleBuyNow = async () => {
@@ -75,7 +78,7 @@ const Page = ({ params }) => {
                     {data.farmerRecommendation}
                 </p>
                 <p className="detail-price">
-                    Price: ${data.price}/Qty
+                    Price: ${data.price}/{data.unit}
                 </p>
                 <div className="quantity-selector">
                     <label htmlFor="quantity">Quantity</label>

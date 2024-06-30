@@ -20,7 +20,7 @@ const Navbar = () => {
                     User Profile
                 </Link>
                 <Link href={`${getBaseUrl()}/pages/homepage/itemsbought`} className='text1' >
-                    Show Items Bought
+                    Order History
                 </Link>
                 <Link href={`${getBaseUrl()}/pages/login`} className='text1'>
                     Login
