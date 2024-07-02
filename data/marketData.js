@@ -1,4 +1,4 @@
-import importImages from "@/utils/importImages"; // Adjust the path based on your project structure
+import importImages from "@/utils/importImages";
 
 const images = importImages(require.context("@/public/MarketImages"));
 
