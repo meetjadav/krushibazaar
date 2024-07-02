@@ -4,7 +4,7 @@ import FooterComponent from "@/components/Footer";
 import NavbarComponent from "@/components/Navbar";
 import "@/app/pages/homepage/marketdynamics/page.css";
 import Card from "@/components/Card";
-import marketData from "@/data/marketData"; // Adjust the path based on your project structure
+import marketData from "@/data/marketData";
 import { getBaseUrl } from "@/utils/getBaseUrl";
 
 const categories = [
@@ -22,8 +22,8 @@ const Page = () => {
 
     const handleScroll = (id) => {
         const element = document.getElementById(id);
-        const yOffset = -150; // Adjust this value based on your navbar height
-        const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        const yOffset = -150;
+        const y = element.getBoundingClientRect().top + window.scrollY + yOffset;
         window.scrollTo({ top: y, behavior: 'smooth' });
     };
 

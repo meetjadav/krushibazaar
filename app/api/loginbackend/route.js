@@ -6,14 +6,12 @@ export async function POST(request) {
     let data = await request.json();
     const { gmail, password } = data;
 
-    // Check if the credentials are provided
     if (!gmail || !password) {
         console.log('Credentials are missing');
         console.log('Sending 400 response');
         return NextResponse.json({ message: 'Credentials are missing' }, { status: 400 });
     }
 
-    // Query to check if the user exists with provided credentials
     const query = `SELECT * FROM users WHERE email = ? AND password = ?`;
     try {
         const results = await new Promise((resolve, reject) => {

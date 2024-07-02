@@ -2,8 +2,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Separator from "@/components/Separator";
-import "@/app/pages/homepage/faq/page.css"; // Assume you have a separate CSS file for styling the FAQ page
-
+import "@/app/pages/homepage/faq/page.css";
 const Page = () => {
     return (
         <div className="faq-main-container">

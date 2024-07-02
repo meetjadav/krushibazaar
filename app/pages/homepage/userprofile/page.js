@@ -10,7 +10,6 @@ const Page = () => {
     const [error, setError] = useState('');
 
     useEffect(() => {
-        // Fetch user profile details from the API
         const fetchUserProfile = async () => {
             try {
                 const response = await fetch('/api/userprofilebackend');
@@ -39,7 +38,6 @@ const Page = () => {
             console.log(data);
             if (data.message == "Logout successful") {
                 console.log('Logout successful');
-                // Redirect to the login page or home page
                 window.location.href = `${getBaseUrl()}/pages/login`;
             } else {
                 console.error('Logout failed');

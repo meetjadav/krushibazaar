@@ -7,14 +7,12 @@ export async function GET(request) {
     const cookies = cookie.parse(request.headers.get('cookie') || '');
     const userId = cookies.userId;
 
-    // Check if the user ID is present in cookies
     if (!userId) {
         console.log('User ID is missing');
         console.log('Sending 400 response');
         return NextResponse.json({ message: 'User ID is missing' }, { status: 400 });
     }
 
-    // Query to fetch the purchased items for the user, grouped by item_name
     const query = `
         SELECT item_name, SUM(quantity) as total_quantity, SUM(quantity * price) / SUM(quantity) as price
         FROM market_data 

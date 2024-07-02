@@ -1,4 +1,4 @@
-// app/purchased-items/page.js
+
 "use client"
 import { useEffect, useState } from 'react';
 import NavbarComponent from '@/components/Navbar';

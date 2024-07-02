@@ -9,14 +9,12 @@ export async function POST(request) {
     const cookies = cookie.parse(request.headers.get('cookie') || '');
     const userId = cookies.userId;
 
-    // Check if all the necessary fields are provided
     if (!userId || !id || !quantity || !name || !price) {
         console.log('Required fields are missing');
         console.log('Sending 400 response');
         return NextResponse.json({ message: 'Required fields are missing' }, { status: 400 });
     }
 
-    // Query to insert the data into the market_data table
     const query = `
         INSERT INTO market_data (user_id,item_name, quantity, price)
         VALUES (?, ?, ?, ?)

@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import FooterComponent from "@/components/Footer";
 import NavbarComponent from "@/components/Navbar";
-import marketData from "@/data/marketData"; // Adjust the path based on your project structure
+import marketData from "@/data/marketData";
 import "@/app/pages/homepage/marketdynamics/[selectId]/page.css";
 import Image from 'next/image';
 import LoadigComponent from "@/components/Loading";
@@ -21,7 +21,7 @@ const Page = ({ params }) => {
             if (marketItem) {
                 setData(marketItem);
             } else {
-                setData(null); // In case the ID doesn't match any data
+                setData(null);
             }
         }
     }, [selectId]);
@@ -53,11 +53,10 @@ const Page = ({ params }) => {
         });
 
         if (response.ok) {
-            // Handle successful response
+
             console.log('Purchase successful');
             setSuccessMessage('Purchase successful');
         } else {
-            // Handle error
             console.error('Purchase failed');
             setFailureMessage('Purchase failed!');
         }

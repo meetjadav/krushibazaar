@@ -3,7 +3,6 @@ import db from '@/utils/db';
 import cookie from 'cookie';
 
 export async function GET(request) {
-    // Parse cookies from the request header
     const cookies = cookie.parse(request.headers.get('cookie') || '');
     const userId = cookies.userId;
 
