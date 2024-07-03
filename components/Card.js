@@ -7,13 +7,12 @@ const Card = ({ Pic, name, description, path }) => {
 
     const handleClick = (e) => {
         e.preventDefault();
-        const selectId = name.toLowerCase().replace(/ /g, '');
-        router.push(`${path}/pages/homepage/marketdynamics/${selectId}`);
+        router.push(`${path}`);
     };
 
     return (
         <div className="card">
-            <a href={`${path}/pages/homepage/marketdynamics/${name.toLowerCase().replace(/ /g, '')}`} className="cardLink" onClick={handleClick}>
+            <a href={`${path}`} className="cardLink" onClick={handleClick}>
                 <Image src={Pic} alt={`${name} image`} width={300} height={200} />
                 <h3>{name}</h3>
                 <p>{description}</p>

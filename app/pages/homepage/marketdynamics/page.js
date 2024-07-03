@@ -19,13 +19,13 @@ const Page = () => {
     const toggleSidebar = () => {
         setSidebarExpanded(!isSidebarExpanded);
     };
-
     const handleScroll = (id) => {
         const element = document.getElementById(id);
         const yOffset = -150;
         const y = element.getBoundingClientRect().top + window.scrollY + yOffset;
         window.scrollTo({ top: y, behavior: 'smooth' });
     };
+
 
     return (
         <div className="main-marketdynamics-container">
@@ -52,7 +52,7 @@ const Page = () => {
                                     Pic={item.image}
                                     name={item.name}
                                     description={item.smallInfo}
-                                    path={getBaseUrl()}
+                                    path={`${getBaseUrl()}/pages/homepage/marketdynamics/${item.name.toLowerCase().replace(/ /g, '')}`}
                                 />
                             );
                         }
@@ -71,7 +71,7 @@ const Page = () => {
                                     Pic={item.image}
                                     name={item.name}
                                     description={item.smallInfo}
-                                    path={getBaseUrl()}
+                                    path={`${getBaseUrl()}/pages/homepage/marketdynamics/${item.name.toLowerCase().replace(/ /g, '')}`}
                                 />
                             );
                         }
@@ -90,7 +90,7 @@ const Page = () => {
                                     Pic={item.image}
                                     name={item.name}
                                     description={item.smallInfo}
-                                    path={getBaseUrl()}
+                                    path={`${getBaseUrl()}/pages/homepage/marketdynamics/${item.name.toLowerCase().replace(/ /g, '')}`}
                                 />
                             );
                         }
