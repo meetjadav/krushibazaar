@@ -70,12 +70,11 @@
     color: white;
     text-align: center;
     transition: transform 0.3s;
-    /* Smooth transition for rotation */
 }
 
 .sidebar.expanded .toggle-button {
     transform: rotate(180deg);
-    /* Rotate arrow when expanded */
+
 }
 
 .cards {
