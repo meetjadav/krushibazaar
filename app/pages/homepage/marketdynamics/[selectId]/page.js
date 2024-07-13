@@ -6,7 +6,7 @@ import NavbarComponent from "@/components/Navbar";
 import marketData from "@/data/marketData";
 import "@/app/pages/homepage/marketdynamics/[selectId]/page.css";
 import Image from 'next/image';
-import LoadigComponent from "@/components/Loading";
+import LoadingComponent from "@/components/Loading";
 
 const Page = ({ params }) => {
     const [data, setData] = useState(null);
@@ -29,13 +29,13 @@ const Page = ({ params }) => {
     if (selectId === undefined) {
         return <div>Invalid ID</div>;
     }
-
     if (!data) {
-        return <div>
-            <NavbarComponent /><LoadigComponent />
-            <FooterComponent /></div>;
+        return (<div className="main-cardinfo-container">
+            <NavbarComponent />
+            <LoadingComponent />
+            <FooterComponent />
+        </div>)
     }
-
     const handleBuyNow = async () => {
         const requestData = {
             id: selectId,
@@ -97,7 +97,7 @@ const Page = ({ params }) => {
                 {failureMessage && <p className="failure-message">{failureMessage}</p>}
             </div>
             <FooterComponent />
-        </div>
+        </div >
     );
 };
 

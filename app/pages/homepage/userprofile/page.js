@@ -1,10 +1,10 @@
-"use client"
+"use client";
 import { useEffect, useState } from 'react';
 import NavbarComponent from '@/components/Navbar';
 import FooterComponent from '@/components/Footer';
 import { getBaseUrl } from '@/utils/getBaseUrl';
-import "@/app/pages/homepage/userprofile/page.css"
-import LoadigComponent from "@/components/Loading";
+import "@/app/pages/homepage/userprofile/page.css";
+
 const Page = () => {
     const [user, setUser] = useState(null);
     const [error, setError] = useState('');
@@ -36,7 +36,7 @@ const Page = () => {
             });
             const data = await response.json();
             console.log(data);
-            if (data.message == "Logout successful") {
+            if (data.message === "Logout successful") {
                 console.log('Logout successful');
                 window.location.href = `${getBaseUrl()}/pages/login`;
             } else {
@@ -50,16 +50,8 @@ const Page = () => {
     if (error) {
         return (
             <div className="main-userprofile-container">
-                <NavbarComponent />Failed to fetch data...
-                <FooterComponent />
-            </div>
-        );
-    }
-
-    if (!user) {
-        return (
-            <div className="main-userprofile-container">
-                <NavbarComponent /><LoadigComponent />
+                <NavbarComponent />
+                Failed to fetch data...
                 <FooterComponent />
             </div>
         );
@@ -70,19 +62,24 @@ const Page = () => {
             <NavbarComponent />
             <h1 className="title">User Profile</h1>
             <div className="sub-container">
-
-                <div className='discription'>
-                    <span className='small-title1'>Email </span>
-                    <span className='small-title1'>Name </span>
-
+                <div className="discription">
+                    <span className="small-title1">Email </span>
+                    <span className="small-title1">Name </span>
                 </div>
-                <div className='discription'>
-                    <span className="small-title2">{user.email}</span>
-                    <span className="small-title2">{user.username}</span>
+                <div className="discription">
+                    {user === null ? (
+                        <>
+                            <span className="small-title2">Fetching...</span>
+                            <span className="small-title2">Fetching...</span>
+                        </>
+                    ) : (
+                        <>
+                            <span className="small-title2">{user.email}</span>
+                            <span className="small-title2">{user.username}</span>
+                        </>
+                    )}
                 </div>
             </div>
-
-
             <button className="logout-button" onClick={logout}>Logout</button>
             <FooterComponent />
         </div>
