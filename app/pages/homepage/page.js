@@ -15,7 +15,7 @@ const Page = () => {
                         <span className="title">What is Krushi Bazaar?</span>
                         <div className="boxes1">
                             <span className="title1_para1">Krushi Bazaar is a platform that enhance the productivity of farmers. It provides necessary equipments to farmer with reliable price. It also provides farming recommendations to boost farming. </span>
-                            <Image className="title1_img1" src="/img4.jpg" alt="" width={500} height={500} />
+                            <Image className="title1_img1" src="/img4.jpg" alt="" width={500} height={500} priority={false} />
                         </div>
                     </div>
                     <div className="para2">

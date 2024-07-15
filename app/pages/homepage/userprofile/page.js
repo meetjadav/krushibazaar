@@ -64,17 +64,24 @@ const Page = () => {
             <div className="sub-container">
                 <div className="discription">
                     <span className="small-title1">Email </span>
-                    <span className="small-title1">Name </span>
-                </div>
-                <div className="discription">
                     {user === null ? (
                         <>
-                            <span className="small-title2">Fetching...</span>
                             <span className="small-title2">Fetching...</span>
                         </>
                     ) : (
                         <>
                             <span className="small-title2">{user.email}</span>
+                        </>
+                    )}
+                </div>
+                <div className="discription">
+                    <span className="small-title1">Name </span>
+                    {user === null ? (
+                        <>
+                            <span className="small-title2">Fetching...</span>
+                        </>
+                    ) : (
+                        <>
                             <span className="small-title2">{user.username}</span>
                         </>
                     )}

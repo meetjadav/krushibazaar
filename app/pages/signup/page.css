@@ -6,7 +6,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 96.3vh;
+    height: 100vh;
     width: 100%;
     background-color: var(--primary_colour);
     overflow: hidden;
@@ -18,7 +18,7 @@
     border-radius: 8px;
     box-shadow: 0px 0px 10px 5px rgb(18 10 10 / 19%);
     text-align: center;
-    width: 300px;
+    width: 40vw;
     height: auto;
 }
 
@@ -61,4 +61,10 @@ input[type="submit"]:hover {
 .login-link a:hover {
     color: var(--primary_colour);
     text-decoration: underline;
+}
+
+@media (max-width:500px) {
+    .signup-container {
+        width: 80vw;
+    }
 }

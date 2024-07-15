@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import FooterComponent from "@/components/Footer";
 import NavbarComponent from "@/components/Navbar";
 import "@/app/pages/homepage/marketdynamics/page.css";

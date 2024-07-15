@@ -13,7 +13,7 @@ const Card = ({ Pic, name, description, path }) => {
     return (
         <div className="card">
             <a href={`${path}`} className="cardLink" onClick={handleClick}>
-                <Image src={Pic} alt={`${name} image`} width={300} height={200} />
+                <Image className="card-image" src={Pic} alt={`${name} image`} />
                 <h3>{name}</h3>
                 <p>{description}</p>
             </a>

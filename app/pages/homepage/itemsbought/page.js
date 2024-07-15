@@ -4,6 +4,9 @@ import NavbarComponent from '@/components/Navbar';
 import FooterComponent from '@/components/Footer';
 import "@/app/pages/homepage/itemsbought/page.css";
 import LoadingComponent from "@/components/Loading";
+import marketData from '@/data/marketData';
+import Image from 'next/image';
+
 const Page = () => {
     const [items, setItems] = useState([]);
     const [error, setError] = useState(null);
@@ -38,18 +41,26 @@ const Page = () => {
                     <p className="no-purchase">You haven&apos;t purchased yet</p>
                 ) : (
                     <ul className="items">
-                        {items.map((item) => (
-                            <li key={item.item_name}>
-                                <p>Item Name: {item.item_name}</p>
-                                <p>Total Quantity: {item.total_quantity}</p>
-                                <p>Total Price: ${item.total_quantity * item.price}</p>
-                            </li>
-                        ))}
+                        {items.map((item) => {
+                            const marketItem = marketData[item.item_name.toLowerCase()];
+                            return (
+                                <li className="item" key={item.item_name}>
+                                    {marketItem && (
+                                        <>
+                                            <Image className='item-image' src={marketItem.image} alt={item.item_name} width={300} height={200} />
+                                        </>
+                                    )}
+                                    <p className='item-name'>{item.item_name}</p>
+                                    <p>{item.total_quantity} items</p>
+                                    <p className='item-price'>${item.total_quantity * item.price}</p>
+
+                                </li>
+                            );
+                        })}
                     </ul>
                 )}
             </LoadingComponent>
             <FooterComponent />
-
         </div>
     );
 };

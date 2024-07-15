@@ -28,3 +28,9 @@
         transform: rotate(360deg);
     }
 }
+
+@media (max-width:500px) {
+    .main-spinner-container {
+        height: 100vh;
+    }
+}

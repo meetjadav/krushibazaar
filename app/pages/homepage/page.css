@@ -1,5 +1,14 @@
 body {
     overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.main-homepage-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .para1,
@@ -52,11 +61,24 @@ body {
     border: 1px solid white;
     border-radius: 25px;
     box-shadow: var(--blur_val1);
-    margin: 10px;
 }
 
 /* Media queries for responsiveness */
-@media (max-width: 768px) {
+@media (max-width: 500px) {
+    body {
+        overflow-x: hidden;
+        margin: 0;
+        padding: 0;
+    }
+
+    .boxes1,
+    .boxes2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 5vh 0vw;
+    }
 
     .title1_para1,
     .title_rem_para {
@@ -68,24 +90,7 @@ body {
     }
 
     .title1_img1 {
-        width: 100%;
+        width: 60%;
         max-width: 90%;
-    }
-}
-
-@media (max-width: 480px) {
-
-    .title1_para1,
-    .title_rem_para {
-        font-size: 14px;
-        height: auto;
-        width: 100%;
-        max-width: 100%;
-        padding: 10px;
-    }
-
-    .title1_img1 {
-        width: 100%;
-        max-width: 100%;
     }
 }

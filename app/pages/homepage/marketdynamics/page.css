@@ -85,3 +85,14 @@
     gap: 3vw;
     flex-wrap: wrap;
 }
+
+@media (max-width: 500px) {
+    .cards {
+        justify-content: center;
+        gap: 5vh;
+    }
+
+    .sidebar {
+        top: 60%;
+    }
+}
