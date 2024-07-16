@@ -69,7 +69,7 @@ const Page = ({ params }) => {
                 {data.name}
             </div>
             <div className="detail-container">
-                <Image src={data.image} alt={data.name} width={700} height={700} className='detail-image' />
+                <Image src={data.image} alt={data.name} className='detail-image' />
                 <p className="detail-description">
                     {data.description}
                 </p>
