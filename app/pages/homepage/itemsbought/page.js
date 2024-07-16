@@ -35,8 +35,9 @@ const Page = () => {
 
     return (
         <div className='main-itemsbought-container'>
-            <NavbarComponent />
             <LoadingComponent>
+                <NavbarComponent />
+
                 <h1 className='title'>Purchased Items</h1>
                 {items.length === 0 ? (
                     <p className="no-purchase">You haven&apos;t purchased anything yet</p>
@@ -63,8 +64,8 @@ const Page = () => {
                         })}
                     </ul>
                 )}
+                <FooterComponent />
             </LoadingComponent>
-            <FooterComponent />
         </div>
     );
 };

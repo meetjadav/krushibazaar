@@ -34,8 +34,9 @@ const Page = () => {
 
     return (
         <div className="main-marketdynamics-container">
-            <NavbarComponent />
             <LoadingComponent>
+                <NavbarComponent />
+
                 <div className={`sidebar ${isSidebarExpanded ? 'expanded' : 'collapsed'}`}>
                     <div className="toggle-button" onClick={toggleSidebar}>
                         {isSidebarExpanded ? '◀' : '▶'}
@@ -104,8 +105,8 @@ const Page = () => {
                         })}
                     </div>
                 </div>
+                <FooterComponent />
             </LoadingComponent >
-            <FooterComponent />
         </div>
     );
 };
