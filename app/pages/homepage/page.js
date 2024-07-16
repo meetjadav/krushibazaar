@@ -8,8 +8,9 @@ import LoadingComponent from "@/components/Loading";
 const Page = () => {
     return (
         <div className="main-homepage-container">
-            <NavbarComponent />
             <LoadingComponent>
+                <NavbarComponent />
+
                 <main>
                     <div className="para1">
                         <span className="title">What is Krushi Bazaar?</span>
@@ -45,8 +46,9 @@ const Page = () => {
                         </div>
                     </div>
                 </main>
+
+                <FooterComponent />
             </LoadingComponent>
-            <FooterComponent />
 
         </div>
     );
