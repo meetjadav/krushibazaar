@@ -1,6 +1,9 @@
 import { NextResponse } from 'next/server';
-import db from '@/utils/db';
+import mongoose from '@/utils/db';
 import cookie from 'cookie';
+
+const db = mongoose.connection.useDb('krushibazaar');
+const marketDataCollection = db.collection('market_data');
 
 export async function POST(request) {
     console.log('Received POST request for data insertion');
@@ -15,22 +18,15 @@ export async function POST(request) {
         return NextResponse.json({ message: 'Required fields are missing' }, { status: 400 });
     }
 
-    const query = `
-        INSERT INTO market_data (user_id,item_name, quantity, price)
-        VALUES (?, ?, ?, ?)
-    `;
-    const values = [userId, id, quantity, price];
+    const newMarketData = {
+        user_id: userId,
+        item_name: name,
+        quantity,
+        price,
+    };
 
     try {
-        const results = await new Promise((resolve, reject) => {
-            db.query(query, values, (err, results) => {
-                if (err) {
-                    reject(err);
-                } else {
-                    resolve(results);
-                }
-            });
-        });
+        const result = await marketDataCollection.insertOne(newMarketData);
 
         console.log('Data inserted successfully');
         console.log('Sending 200 response');

@@ -1,5 +1,8 @@
 import { NextResponse } from 'next/server';
-import db from '@/utils/db';
+import mongoose from '@/utils/db';
+
+const db = mongoose.connection.useDb('krushibazaar');
+const usersCollection = db.collection('users');
 
 export async function POST(request) {
     console.log('Received POST request for login');
@@ -12,27 +15,17 @@ export async function POST(request) {
         return NextResponse.json({ message: 'Credentials are missing' }, { status: 400 });
     }
 
-    const query = `SELECT * FROM users WHERE email = ? AND password = ?`;
     try {
-        const results = await new Promise((resolve, reject) => {
-            db.query(query, [gmail, password], (err, results) => {
-                if (err) {
-                    reject(err);
-                } else {
-                    resolve(results);
-                }
-            });
-        });
+        const user = await usersCollection.findOne({ email: gmail });
 
-        if (results.length > 0) {
+        if (user && user.password === password) {
             console.log('Login successful');
             console.log('Sending 200 response');
 
-            const user = results[0]; // Assuming the first result is the user object
             const response = NextResponse.json({ message: 'Login successful' });
 
             // Set cookies with user info (e.g., user ID and email)
-            response.cookies.set('userId', user.id);
+            response.cookies.set('userId', user._id.toString());
             response.cookies.set('userEmail', user.email);
 
             return response;

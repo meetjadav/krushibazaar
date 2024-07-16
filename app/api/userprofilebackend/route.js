@@ -1,6 +1,9 @@
 import { NextResponse } from 'next/server';
-import db from '@/utils/db';
+import mongoose from '@/utils/db';
 import cookie from 'cookie';
+
+const db = mongoose.connection.useDb('krushibazaar');
+const usersCollection = db.collection('users');
 
 export async function GET(request) {
     const cookies = cookie.parse(request.headers.get('cookie') || '');
@@ -11,22 +14,12 @@ export async function GET(request) {
         return NextResponse.json({ message: 'User ID is missing' }, { status: 400 });
     }
 
-    const query = 'SELECT id, email, username FROM users WHERE id = ?';
-
     try {
-        const results = await new Promise((resolve, reject) => {
-            db.query(query, [userId], (err, results) => {
-                if (err) {
-                    reject(err);
-                } else {
-                    resolve(results);
-                }
-            });
-        });
+        const user = await usersCollection.findOne({ _id: new mongoose.Types.ObjectId(userId) }, { projection: { id: 1, email: 1, username: 1 } });
 
-        if (results.length > 0) {
+        if (user) {
             console.log('User details fetched successfully');
-            return NextResponse.json({ user: results[0] });
+            return NextResponse.json({ user });
         } else {
             console.log('User not found');
             return NextResponse.json({ message: 'User not found' }, { status: 404 });

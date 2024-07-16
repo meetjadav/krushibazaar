@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useEffect, useState } from 'react';
 import NavbarComponent from '@/components/Navbar';
 import FooterComponent from '@/components/Footer';
@@ -38,7 +38,7 @@ const Page = () => {
             <LoadingComponent>
                 <h1 className='title'>Purchased Items</h1>
                 {items.length === 0 ? (
-                    <p className="no-purchase">You haven&apos;t purchased yet</p>
+                    <p className="no-purchase">You haven&apos;t purchased anything yet</p>
                 ) : (
                     <ul className="items">
                         {items.map((item) => {
@@ -46,14 +46,17 @@ const Page = () => {
                             return (
                                 <li className="item" key={item.item_name}>
                                     {marketItem && (
-                                        <>
-                                            <Image className='item-image' src={marketItem.image} alt={item.item_name} width={300} height={200} />
-                                        </>
+                                        <Image
+                                            className='item-image'
+                                            src={marketItem.image}
+                                            alt={item.item_name}
+                                            width={300}
+                                            height={200}
+                                        />
                                     )}
                                     <p className='item-name'>{item.item_name}</p>
                                     <p>{item.total_quantity} items</p>
-                                    <p className='item-price'>${item.total_quantity * item.price}</p>
-
+                                    <p className='item-price'>${(item.total_quantity * item.price).toFixed(2)}</p>
                                 </li>
                             );
                         })}

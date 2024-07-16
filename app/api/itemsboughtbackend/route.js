@@ -1,6 +1,9 @@
 import { NextResponse } from 'next/server';
-import db from '@/utils/db';
+import mongoose from '@/utils/db';
 import cookie from 'cookie';
+
+const db = mongoose.connection.useDb('krushibazaar');
+const marketDataCollection = db.collection('market_data');
 
 export async function GET(request) {
     console.log('Received GET request for fetching purchased items');
@@ -13,24 +16,27 @@ export async function GET(request) {
         return NextResponse.json({ message: 'User ID is missing' }, { status: 400 });
     }
 
-    const query = `
-        SELECT item_name, SUM(quantity) as total_quantity, SUM(quantity * price) / SUM(quantity) as price
-        FROM market_data 
-        WHERE user_id = ?
-        GROUP BY item_name
-    `;
-    const values = [userId];
-
     try {
-        const results = await new Promise((resolve, reject) => {
-            db.query(query, values, (err, results) => {
-                if (err) {
-                    reject(err);
-                } else {
-                    resolve(results);
+        const results = await marketDataCollection.aggregate([
+            {
+                $match: { user_id: userId }
+            },
+            {
+                $group: {
+                    _id: "$item_name",
+                    total_quantity: { $sum: "$quantity" },
+                    price: { $avg: "$price" }
                 }
-            });
-        });
+            },
+            {
+                $project: {
+                    item_name: "$_id",
+                    total_quantity: 1,
+                    price: 1,
+                    _id: 0
+                }
+            }
+        ]).toArray();
 
         console.log('Purchased items fetched successfully');
         console.log('Sending 200 response');
