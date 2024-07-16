@@ -19,6 +19,7 @@ const Page = () => {
                     throw new Error('Failed to fetch purchased items');
                 }
                 const data = await response.json();
+                console.log('Fetched data:', data);
                 setItems(data.purchasedItems);
             } catch (err) {
                 setError(err.message);
@@ -42,7 +43,7 @@ const Page = () => {
                 ) : (
                     <ul className="items">
                         {items.map((item) => {
-                            const marketItem = marketData[item.item_name.toLowerCase()];
+                            const marketItem = marketData[item.item_name.toLowerCase().replace(/ /g, '')];
                             return (
                                 <li className="item" key={item.item_name}>
                                     {marketItem && (
