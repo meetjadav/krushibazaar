@@ -12,16 +12,19 @@ export async function POST(request) {
     const cookies = cookie.parse(request.headers.get('cookie') || '');
     const userId = cookies.userId;
 
-    if (!userId || !id || !quantity || !name || !price) {
-        console.log('Required fields are missing');
+    // Convert quantity to a number
+    const quantityNumber = parseInt(quantity, 10);
+
+    if (!userId || !id || isNaN(quantityNumber) || !name || !price) {
+        console.log('Required fields are missing or quantity is not a number');
         console.log('Sending 400 response');
-        return NextResponse.json({ message: 'Required fields are missing' }, { status: 400 });
+        return NextResponse.json({ message: 'Required fields are missing or quantity is not a number' }, { status: 400 });
     }
 
     const newMarketData = {
         user_id: userId,
         item_name: name,
-        quantity,
+        quantity: quantityNumber,
         price,
     };
 
