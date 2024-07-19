@@ -1,0 +1,55 @@
+.main-forgot-password-container {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--primary_colour);
+}
+
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 40vw;
+    gap: 2vh;
+}
+
+input[type="email"] {
+    width: 35vw;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+
+input[type="submit"] {
+    background-color: var(--primary_colour);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover {
+    background-color: var(--primary_colour_2);
+}
+
+
+@media (max-width:500px) {
+    .form-container {
+        width: 80vw;
+    }
+
+    input[type="gmail"] {
+        width: 60vw;
+    }
+}

@@ -33,7 +33,7 @@
     gap: 2vh;
 }
 
-input[type="text"],
+input[type="email"],
 input[type="password"] {
     width: 35vw;
     padding: 10px;

@@ -21,10 +21,8 @@ const Page = () => {
             const data = await response.json(); // Parse JSON response
             console.log(data);
             if (data.message == "Login successful") {
-                // Redirect or perform action upon successful login
                 window.location.href = `${getBaseUrl()}/pages/homepage`;
             } else {
-                // Handle failed login
                 console.log("Login failed");
                 setError("Authentication failed. Please check your credentials.");
             }
@@ -39,7 +37,7 @@ const Page = () => {
                 <h2>Welcome To KrushiBazaar</h2>
                 {error && <p style={{ color: 'red' }}>{error}</p>}
                 <form onSubmit={handleLogin} className='form-container'>
-                    <input type="text" name="gmail" placeholder="Gmail" value={gmail} onChange={(e) => setGmail(e.target.value)} />
+                    <input type="email" name="gmail" placeholder="Gmail" value={gmail} onChange={(e) => setGmail(e.target.value)} />
                     <input type="password" name="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
                     <a className="forgot-password" href={`${getBaseUrl()}/pages/login/forgot-password`}>
                         forgot password?
