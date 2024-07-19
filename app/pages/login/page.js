@@ -41,7 +41,7 @@ const Page = () => {
                 <form onSubmit={handleLogin} className='form-container'>
                     <input type="text" name="gmail" placeholder="Gmail" value={gmail} onChange={(e) => setGmail(e.target.value)} />
                     <input type="password" name="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
-                    <a className="forgot-password">
+                    <a className="forgot-password" href={`${getBaseUrl()}/pages/login/forgot-password`}>
                         forgot password?
                     </a>
                     <input type="submit" value="Login" />
