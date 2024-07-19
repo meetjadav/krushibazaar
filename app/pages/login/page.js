@@ -38,14 +38,18 @@ const Page = () => {
             <div className="login-container">
                 <h2>Welcome To KrushiBazaar</h2>
                 {error && <p style={{ color: 'red' }}>{error}</p>}
-                <form onSubmit={handleLogin}>
+                <form onSubmit={handleLogin} className='form-container'>
                     <input type="text" name="gmail" placeholder="Gmail" value={gmail} onChange={(e) => setGmail(e.target.value)} />
                     <input type="password" name="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                    <a className="forgot-password">
+                        forgot password?
+                    </a>
                     <input type="submit" value="Login" />
                 </form>
                 <div className="signup">
                     <span>Don&apos;t have an account? </span><a href={`${getBaseUrl()}/pages/signup`}>Sign up</a>
                 </div>
+
             </div>
         </div>
     );
