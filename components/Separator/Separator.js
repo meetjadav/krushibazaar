@@ -1,4 +1,4 @@
-import "@/components/Separator.css"
+import "@/components/Separator/Separator.css"
 const Separator = () => {
     return <div className="separator"></div>;
 };

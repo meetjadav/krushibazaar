@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from 'react';
-import NavbarComponent from '@/components/Navbar';
-import FooterComponent from '@/components/Footer';
+import NavbarComponent from '@/components/Navbar/Navbar';
+import FooterComponent from '@/components/Footer/Footer';
 import { getBaseUrl } from '@/utils/getBaseUrl';
 import "@/app/pages/homepage/userprofile/page.css";
 

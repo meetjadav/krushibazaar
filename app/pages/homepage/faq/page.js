@@ -1,9 +1,9 @@
 "use client";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import Separator from "@/components/Separator";
+import Navbar from "@/components/Navbar/Navbar";
+import Footer from "@/components/Footer/Footer";
+import Separator from "@/components/Separator/Separator";
 import "@/app/pages/homepage/faq/page.css";
-import LoadingComponent from "@/components/Loading";
+import LoadingComponent from "@/components/Loading/Loading";
 const Page = () => {
     return (
         <div className="faq-main-container">

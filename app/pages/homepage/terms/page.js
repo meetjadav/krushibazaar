@@ -1,7 +1,7 @@
 import "@/app/pages/homepage/terms/page.css"
-import NavbarComponent from "@/components/Navbar"
-import FooterComponent from "@/components/Footer";
-import LoadingComponent from "@/components/Loading";
+import NavbarComponent from "@/components/Navbar/Navbar"
+import FooterComponent from "@/components/Footer/Footer";
+import LoadingComponent from "@/components/Loading/Loading";
 const TermsAndConditions = () => {
     return (
         <div className="main-terms-container">

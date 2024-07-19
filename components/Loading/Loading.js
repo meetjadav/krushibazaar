@@ -1,5 +1,5 @@
 "use client";
-import "@/components/Loading.css";
+import "@/components/Loading/Loading.css";
 import React, { useState, useEffect } from 'react';
 
 const LoadingWrapper = ({ children }) => {
@@ -10,7 +10,7 @@ const LoadingWrapper = ({ children }) => {
             setIsLoading(false);
         };
 
-        if (document.readyState === "complete") {
+        if (document.readyState === "complete" || document.readyState === "ready") {
             handleLoad();
         } else {
             window.addEventListener('DOMContentLoaded', handleLoad);

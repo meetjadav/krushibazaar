@@ -1,11 +1,12 @@
 "use client"
-import NavbarComponent from "@/components/Navbar";
-import FooterComponent from "@/components/Footer";
+import NavbarComponent from "@/components/Navbar/Navbar";
+import FooterComponent from "@/components/Footer/Footer";
 import Image from 'next/image';
-import Separator from "@/components/Separator";
+import Separator from "@/components/Separator/Separator";
 import "@/app/pages/homepage/page.css";
-import LoadingComponent from "@/components/Loading";
+import LoadingComponent from "@/components/Loading/Loading";
 const Page = () => {
+
     return (
         <div className="main-homepage-container">
             <LoadingComponent>

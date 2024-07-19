@@ -1,9 +1,9 @@
 "use client";
 import { useEffect, useState } from 'react';
-import NavbarComponent from '@/components/Navbar';
-import FooterComponent from '@/components/Footer';
+import NavbarComponent from '@/components/Navbar/Navbar';
+import FooterComponent from '@/components/Footer/Footer';
 import "@/app/pages/homepage/itemsbought/page.css";
-import LoadingComponent from "@/components/Loading";
+import LoadingComponent from "@/components/Loading/Loading";
 import marketData from '@/data/marketData';
 import Image from 'next/image';
 

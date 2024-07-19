@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import "@/components/Navbar.css";
+import "@/components/Navbar/Navbar.css";
 import { getBaseUrl } from '@/utils/getBaseUrl';
 
 const Navbar = () => {

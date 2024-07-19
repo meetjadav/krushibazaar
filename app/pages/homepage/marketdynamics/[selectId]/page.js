@@ -1,12 +1,12 @@
 "use client";
 
 import { useEffect, useState } from 'react';
-import FooterComponent from "@/components/Footer";
-import NavbarComponent from "@/components/Navbar";
+import FooterComponent from "@/components/Footer/Footer";
+import NavbarComponent from "@/components/Navbar/Navbar";
 import marketData from "@/data/marketData";
 import "@/app/pages/homepage/marketdynamics/[selectId]/page.css";
 import Image from 'next/image';
-import LoadingComponent from "@/components/Loading";
+import LoadingComponent from "@/components/Loading/Loading";
 
 const Page = ({ params }) => {
     const [data, setData] = useState(null);

@@ -1,6 +1,6 @@
 "use client"
 import Link from 'next/link';
-import "@/components/Footer.css"
+import "@/components/Footer/Footer.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { getBaseUrl } from '@/utils/getBaseUrl';

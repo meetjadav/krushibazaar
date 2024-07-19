@@ -1,4 +1,4 @@
-import "@/components/Card.css";
+import "@/components/Card/Card.css";
 import Image from 'next/image';
 import { useRouter } from 'next/navigation'
 

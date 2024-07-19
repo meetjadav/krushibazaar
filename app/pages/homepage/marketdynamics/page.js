@@ -1,12 +1,12 @@
 "use client";
 import React, { useState } from 'react';
-import FooterComponent from "@/components/Footer";
-import NavbarComponent from "@/components/Navbar";
+import FooterComponent from "@/components/Footer/Footer";
+import NavbarComponent from "@/components/Navbar/Navbar";
 import "@/app/pages/homepage/marketdynamics/page.css";
-import Card from "@/components/Card";
+import Card from "@/components/Card/Card";
 import marketData from "@/data/marketData";
 import { getBaseUrl } from "@/utils/getBaseUrl";
-import LoadingComponent from "@/components/Loading";
+import LoadingComponent from "@/components/Loading/Loading";
 
 const categories = [
     { id: "seeds", label: "Seeds" },
