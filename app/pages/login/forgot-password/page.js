@@ -31,11 +31,14 @@ const Page = () => {
 
     return (
         <div className="main-forgot-password-container">
-            <h2>Enter Your Email</h2>
-            <form onSubmit={handleLogin} className='form-container'>
-                <input type="email" name="gmail" placeholder="Gmail" value={gmail} onChange={(e) => setGmail(e.target.value)} />
-                <input type="submit" value="send OTP" />
-            </form>
+            <div className="forgot-password-container">
+                <h2>Enter Your Email</h2>
+                <form onSubmit={handleLogin} className='form-container'>
+                    <input type="email" name="gmail" placeholder="Gmail" value={gmail} onChange={(e) => setGmail(e.target.value)} />
+                    <input type="submit" value="send OTP" />
+                </form>
+            </div>
+
         </div>
     );
 };

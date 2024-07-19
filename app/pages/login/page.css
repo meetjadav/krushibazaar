@@ -98,7 +98,7 @@ input[type="submit"]:hover {
         width: 80vw;
     }
 
-    input[type="text"],
+    input[type="email"],
     input[type="password"] {
         width: 60vw;
     }
