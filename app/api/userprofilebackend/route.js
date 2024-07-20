@@ -1,9 +1,16 @@
 import { NextResponse } from 'next/server';
 import mongoose from '@/utils/db';
 import cookie from 'cookie';
+import dotenv from 'dotenv';
 
-const db = mongoose.connection.useDb('krushibazaar');
-const usersCollection = db.collection('users');
+dotenv.config();
+
+
+const dbName = process.env.DATABASE_NAME;
+const collectionName = process.env.COLLECTION_FOR_USERS;
+
+const db = mongoose.connection.useDb(dbName);
+const usersCollection = db.collection(collectionName);
 
 export async function GET(request) {
     const cookies = cookie.parse(request.headers.get('cookie') || '');

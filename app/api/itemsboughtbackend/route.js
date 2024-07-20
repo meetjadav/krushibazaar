@@ -1,9 +1,15 @@
 import { NextResponse } from 'next/server';
 import mongoose from '@/utils/db';
 import cookie from 'cookie';
+import dotenv from 'dotenv';
 
-const db = mongoose.connection.useDb('krushibazaar');
-const marketDataCollection = db.collection('market_data');
+dotenv.config();
+
+const dbName = process.env.DATABASE_NAME;
+const collectionName = process.env.COLLECTION_FOR_MARKET;
+
+const db = mongoose.connection.useDb(dbName);
+const marketDataCollection = db.collection(collectionName);
 
 export async function GET(request) {
     console.log('Received GET request for fetching purchased items');

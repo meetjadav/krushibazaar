@@ -1,8 +1,14 @@
 import { NextResponse } from 'next/server';
 import mongoose from '@/utils/db';
+import dotenv from 'dotenv';
 
-const db = mongoose.connection.useDb('krushibazaar');
-const usersCollection = db.collection('users');
+dotenv.config();
+
+const dbName = process.env.DATABASE_NAME;
+const collectionName = process.env.COLLECTION_FOR_USERS;
+
+const db = mongoose.connection.useDb(dbName);
+const usersCollection = db.collection(collectionName);
 
 export async function POST(request) {
     console.log('Received POST request for login');

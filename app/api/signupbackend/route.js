@@ -1,5 +1,8 @@
 import { NextResponse } from 'next/server';
 import mongoose from '@/utils/db';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 export async function POST(request) {
     console.log('Received POST request');
@@ -19,8 +22,11 @@ export async function POST(request) {
             password,
         };
 
-        const db = mongoose.connection.useDb('krushibazaar');
-        const usersCollection = db.collection('users');
+        const dbName = process.env.DATABASE_NAME;
+        const collectionName = process.env.COLLECTION_FOR_USERS;
+
+        const db = mongoose.connection.useDb(dbName);
+        const usersCollection = db.collection(collectionName);
 
         const result = await usersCollection.insertOne(newUser);
 
