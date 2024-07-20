@@ -6,7 +6,6 @@ import NavbarComponent from "@/components/Navbar/Navbar";
 import marketData from "@/data/marketData";
 import "@/app/pages/homepage/marketdynamics/[selectId]/page.css";
 import Image from 'next/image';
-import LoadingComponent from "@/components/Loading/Loading";
 
 const Page = ({ params }) => {
     const [data, setData] = useState(null);
@@ -32,7 +31,6 @@ const Page = ({ params }) => {
     if (!data) {
         return (<div className="main-cardinfo-container">
             <NavbarComponent />
-            <LoadingComponent />
             <FooterComponent />
         </div>)
     }
