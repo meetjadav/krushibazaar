@@ -30,7 +30,6 @@ export async function POST(request) {
 
             const response = NextResponse.json({ message: 'Login successful' });
 
-            // Set cookies with user info (e.g., user ID and email)
             response.cookies.set('userId', user._id.toString());
             response.cookies.set('userEmail', user.email);
 
