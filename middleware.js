@@ -7,11 +7,13 @@ export function middleware(req) {
 
     if (!userId || !userEmail) {
         return NextResponse.redirect(new URL('/pages/login', req.url));
+
     }
+
 
     return NextResponse.next();
 }
 
 export const config = {
-    matcher: ['/pages/homepage/:path*']
+    matcher: ['/pages/homepage/:path*', '/pages/login/reset-password']
 };
