@@ -65,7 +65,7 @@ input[type="submit"]:hover {
 
 
 @media (max-width:500px) {
-    .reset-password-container {
+    .set-password-container {
         width: 90vw;
     }
 
@@ -73,7 +73,9 @@ input[type="submit"]:hover {
         width: 90vw;
     }
 
-    input[type="password"] {
+    input[type="password"],
+    input[type="text"] {
         width: 80vw;
     }
+
 }
