@@ -1,16 +1,19 @@
 import { NextResponse } from 'next/server';
 import mongoose from '@/utils/db';
 import dotenv from 'dotenv';
-
+import cookie from 'cookie';
 dotenv.config();
 
 export async function POST(request) {
     console.log('Received POST request');
-    let data = await request.json();
-    const { username, email, password, confirm_password } = data;
+    const { username, password, reEnterPassword } = await request.json();
+    const cookies = cookie.parse(request.headers.get('cookie') || '');
+    const email = cookies.userEmail;
 
-    if (password !== confirm_password) {
+    if (password !== reEnterPassword) {
         console.log('Passwords do not match');
+        console.log(password);
+        console.log(reEnterPassword);
         console.log('Sending 400 response');
         return NextResponse.json({ error: 'Passwords do not match' }, { status: 400 });
     }
@@ -33,7 +36,8 @@ export async function POST(request) {
         if (result.acknowledged) {
             console.log('User registered successfully');
             console.log('Sending 200 response');
-            return NextResponse.json({ message: 'User registered successfully' });
+            response.cookies.set('userEmail', '', { expires: new Date(0) });
+            return NextResponse.json({ message: 'successful' });
         } else {
             console.error('Error registering user');
             console.log('Sending 500 response');

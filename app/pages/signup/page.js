@@ -4,36 +4,44 @@ import "../signup/page.css";
 import { getBaseUrl } from '@/utils/getBaseUrl';
 
 const Page = () => {
-    const [formData, setFormData] = useState({
-        username: '',
-        email: '',
-        password: '',
-        confirm_password: ''
-    });
+    const [email, setEmail] = useState('');
+    const [otp, setOtp] = useState('');
+    const [userOtp, setUserOtp] = useState('');
+    const [message, setMessage] = useState('');
+    const [otpSent, setOtpSent] = useState(false);
 
-    const handleChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
-    };
 
-    const handleSubmit = async (e) => {
-        e.preventDefault(); // Prevent default form submission behavior
+    const handleSendOtp = async (e) => {
+        e.preventDefault();
         try {
-            const response = await fetch('/api/signupbackend', {
+            const response = await fetch('/api/signupverifybackend', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(formData)
+                body: JSON.stringify({ to: email })
             });
-
-            if (await response.json()) {
-                // Redirect to login page upon successful registration
-                window.location.href = `${getBaseUrl()}/pages/login`;
+            const data = await response.json();
+            if (data.message === "successful") {
+                setOtp(data.otp);
+                setOtpSent(true);
+                setMessage("OTP sent successfully. Please check your email.");
             } else {
-                console.error('Registration failed:', response.statusText);
+                setMessage("Failed to send OTP. Please try again.");
             }
         } catch (error) {
-            console.error('Registration error:', error);
+            console.error("Error:", error);
+            setMessage("An error occurred. Please try again.");
+        }
+    };
+
+    const handleVerifyOtp = async (e) => {
+        e.preventDefault();
+        if (userOtp === otp) {
+            window.location.href = `${getBaseUrl()}/pages/signup/set-password`;
+
+        } else {
+            alert('Invalid OTP!');
         }
     };
 
@@ -41,13 +49,26 @@ const Page = () => {
         <div className="main-signup-container">
             <div className="signup-container">
                 <h2>KrushiBazaar Registration</h2>
-                <form onSubmit={handleSubmit}>
-                    <input type="text" name="username" placeholder="Full Name" onChange={handleChange} />
-                    <input type="email" name="email" placeholder="Email" onChange={handleChange} />
-                    <input type="password" name="password" placeholder="Password" onChange={handleChange} />
-                    <input type="password" name="confirm_password" placeholder="Confirm Password" onChange={handleChange} />
-                    <input type="submit" value="Sign Up" />
-                </form>
+                {!otpSent ? (
+                    <form onSubmit={handleSendOtp}>
+                        <input type="email" name="email" placeholder="Email" onChange={(e) => {
+                            setEmail(e.target.value);
+                        }} value={email} required />
+                        <input type="submit" value="Send OTP" />
+                    </form>
+                ) : (
+                    <form onSubmit={handleVerifyOtp}>
+                        <input
+                            type="text"
+                            placeholder="Enter OTP"
+                            value={userOtp}
+                            onChange={(e) => setUserOtp(e.target.value)}
+                            required
+                        />
+                        <input type="submit" value="Verify OTP" />
+                    </form>
+                )}
+                {message && <p className='message'>{message}</p>}
                 <div className="login-link">
                     <span>Already have an account? </span>
                     <a href={`${getBaseUrl()}/pages/login`}>Login</a>
